@@ -40,7 +40,7 @@ void StarShip::draw()
 
 void StarShip::update()
 {
-	m_move();
+	//m_move();
 }
 
 void StarShip::clean()
