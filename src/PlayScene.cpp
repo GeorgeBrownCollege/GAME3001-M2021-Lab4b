@@ -57,6 +57,7 @@ void PlayScene::start()
 	// Set GUI Title
 	m_guiTitle = "Play Scene";
 
+	
 	// Add Target to Scene
 	m_pTarget = new Target();
 	m_pTarget->getTransform()->position = glm::vec2(600.0f, 300.0f);

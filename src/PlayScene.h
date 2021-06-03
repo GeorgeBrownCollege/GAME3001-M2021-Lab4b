@@ -5,6 +5,7 @@
 #include "Scene.h"
 #include "StarShip.h"
 #include "Target.h"
+#include "Tile.h"
 
 
 class PlayScene : public Scene
@@ -35,6 +36,7 @@ private:
 
 	// UI Controls
 	bool m_bToggleGrid;
+
 };
 
 #endif /* defined (__PLAY_SCENE__) */
