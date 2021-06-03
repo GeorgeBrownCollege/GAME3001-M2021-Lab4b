@@ -57,6 +57,8 @@ void PlayScene::start()
 	// Set GUI Title
 	m_guiTitle = "Play Scene";
 
+	// Setup the Grid
+	m_buildGrid();
 	
 	// Add Target to Scene
 	m_pTarget = new Target();
@@ -83,7 +85,8 @@ void PlayScene::GUI_Function()
 
 	if(ImGui::Checkbox("Toggle Grid", &m_bToggleGrid))
 	{
-
+		// toggle grid on/off
+		m_setGridEnabled(m_bToggleGrid);
 	}
 
 	ImGui::Separator();
@@ -111,4 +114,41 @@ void PlayScene::GUI_Function()
 
 	
 	ImGui::End();
+}
+
+void PlayScene::m_buildGrid()
+{
+	auto tileSize = Config::TILE_SIZE; // alias for Tile size
+
+	// add tiles to the grid
+	for (int row = 0; row < Config::ROW_NUM; ++row)
+	{
+		for (int col = 0; col < Config::COL_NUM; ++col)
+		{
+			Tile* tile = new Tile(); // create a new empty tile
+			tile->getTransform()->position = glm::vec2(col * tileSize, row * tileSize); // world position
+			tile->setGridPosition(col, row);
+			addChild(tile);
+			tile->addLabels();
+			tile->setEnabled(false);
+			m_pGrid.push_back(tile);
+		}
+	}
+}
+
+void PlayScene::m_setGridEnabled(const bool state)
+{
+	for (auto tile : m_pGrid)
+	{
+		tile->setEnabled(state);
+		tile->setLabelsEnabled(state);
+	}
+
+	m_isGridEnabled = state;
+	
+}
+
+bool PlayScene::m_getGridEnabled() const
+{
+	return m_isGridEnabled;
 }

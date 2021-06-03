@@ -37,6 +37,16 @@ private:
 	// UI Controls
 	bool m_bToggleGrid;
 
+	// Pathfinding Objects and Functions
+	
+	std::vector<Tile*> m_pGrid; // Grid of Tile pointers
+	bool m_isGridEnabled;
+	
+	void m_buildGrid();
+	void m_setGridEnabled(bool state);
+	bool m_getGridEnabled() const;
+	
+
 };
 
 #endif /* defined (__PLAY_SCENE__) */

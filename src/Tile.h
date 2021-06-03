@@ -1,12 +1,13 @@
 #pragma once
 #ifndef __TILE__
 #define __TILE__
-#include "DisplayObject.h"
+
 #include "Label.h"
+#include "NavigationObject.h"
 #include "NeighbourTile.h"
 #include "TileStatus.h"
 
-class Tile : public DisplayObject
+class Tile : public NavigationObject
 {
 public:
 	// Constructor
