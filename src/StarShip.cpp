@@ -7,7 +7,7 @@
 
 StarShip::StarShip()
 {
-	TextureManager::Instance().load("../Assets/textures/ncl.png", "starship");
+	TextureManager::Instance().load("../Assets/textures/ncl_small.png", "starship");
 
 	auto size = TextureManager::Instance().getTextureSize("starship");
 	setWidth(size.x);

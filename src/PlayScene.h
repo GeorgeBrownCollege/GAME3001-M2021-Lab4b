@@ -45,6 +45,10 @@ private:
 	void m_buildGrid();
 	void m_setGridEnabled(bool state);
 	bool m_getGridEnabled() const;
+
+	// convenience functions
+	Tile* m_getTile(int col, int row);
+	Tile* m_getTile(glm::vec2 grid_position);
 	
 
 };
